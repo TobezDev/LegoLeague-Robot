@@ -23,6 +23,7 @@ def startup():
     StatusLight.on(color='orange')
     setup()
 
+
 @hub.event
 async def on_ready():
     startup()
