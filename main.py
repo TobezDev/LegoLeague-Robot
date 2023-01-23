@@ -24,8 +24,4 @@ def startup():
     setup()
 
 
-@hub.event
-async def on_ready():
-    startup()
 
-    # hello
