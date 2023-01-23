@@ -11,7 +11,7 @@ def setup():
     StatusLight = Hub.status_light
     LightMatrix = Hub.light_matrix
 
-    distanceSensor = DistanceSensor('<port>')
+    distanceSensor = DistanceSepiknsor('<port>')
     colorSensor = ColorSensor('<port>')
     motor_r = Motor('<port>')
     motor_l = Motor('<port>')
