@@ -37,6 +37,27 @@ def road_lr(l_colorSensor, r_ColorSensor):
     else:
         return None
 
+# -= Challenges =-
+
+def windmil_thing():
+    if DistanceSensor.result <= 3:
+        motors.forward(rotations=0.5)
+        motors.backward(rotations=0.5)
+        motors.forward(rotations=0.5)
+        motors.backward(rotations=0.5)
+        motors.forward(rotations=0.5)
+    else:
+        onRoad = road()
+        if onRoad is None:
+            lr = road_lr()
+            if lr == "Left":
+                motor_r(rotations="")
+            elif lr == "Right":
+                motor_l.forward(rotations="")
+            else:
+                print("[LOGS]: Error: Cannot find adequate path for function: road.")
+        
+
 if __name__ == "__main__":
     setup()
     startup()
