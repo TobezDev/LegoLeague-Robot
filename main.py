@@ -27,3 +27,5 @@ def startup():
 @hub.event
 async def on_ready():
     startup()
+
+    # hello
