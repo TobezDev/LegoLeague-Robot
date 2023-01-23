@@ -51,9 +51,9 @@ def windmil_thing():
         if onRoad is None:
             lr = road_lr()
             if lr == "Left":
-                motor_r(rotations="")
+                motor_r(rotations=1)
             elif lr == "Right":
-                motor_l.forward(rotations="")
+                motor_l.forward(rotations=1)
             else:
                 print("[LOGS]: Error: Cannot find adequate path for function: road.")
         
