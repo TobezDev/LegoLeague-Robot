@@ -40,7 +40,7 @@ def road_lr(l_colorSensor, r_ColorSensor):
 # -= Challenges =-
 
 def windmil_thing():
-    if DistanceSensor.result <= 3:
+    if ForceSensor.result <= 3:
         motors.forward(rotations=0.5)
         motors.backward(rotations=0.5)
         motors.forward(rotations=0.5)
