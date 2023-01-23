@@ -14,7 +14,7 @@ def setup():
     distanceSensor = DistanceSensor('<port>')
     colorSensor = ColorSensor('<port>')
     motor_r = Motor('<port>')
-    motor_l = Motor(\'<port>')
+    motor_l = Motor('<port>')
 
     motors = MotorPair(motor_l, motor_r)
 
