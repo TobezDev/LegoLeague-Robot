@@ -2,9 +2,7 @@ from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, Motio
 from spike.control import wait_for_seconds, wait_until, Timer
 from math import *
 
-
 hub = PrimeHub()
-
 
 def setup():
     Hub = PrimeHub()
@@ -21,7 +19,6 @@ def setup():
     motor_l = Motor('<port>')
 
     motors = MotorPair(motor_l, motor_r)
-
 
 def startup(Hub, StatusLight, motor_r, motor_l, motors):
     StatusLight.on(color="orange")
