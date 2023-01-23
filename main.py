@@ -36,3 +36,9 @@ def road_lr(l_colorSensor, r_ColorSensor):
         return "Right"
     else:
         return None
+
+if __name__ == "__main__":
+    setup()
+    startup()
+
+
