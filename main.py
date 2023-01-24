@@ -55,7 +55,10 @@ def windmil_thing():
             elif lr == "Right":
                 motor_l.forward(rotations=1)
             else:
-                print("[LOGS]: Error: Cannot find adequate path for function: road.")
+                print("[LOGS]: Error: Cannot find path.")
+        else:
+            print("[LOGS]: Error: Cannot determine direction of road. Retrying...")
+        
         
 
 if __name__ == "__main__":
