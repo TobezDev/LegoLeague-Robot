@@ -76,7 +76,3 @@ def travel(location: str):
         print("Location is invalid.")
         
 
-if __name__ == "__main__":
-    setup()
-    startup()
-
