@@ -7,4 +7,4 @@
 
 ### Contributors:
 
-#### [@TheRealTobes28-Codez][TobezURL], [@EvictedDeath]
+#### [@TheRealTobes28-Codez](TheRealTobes28-Codez-URL), [@EvictedDeath](EvictedDeath-URL)
