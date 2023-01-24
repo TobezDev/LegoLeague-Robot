@@ -10,17 +10,14 @@ def setup():
     Hub = PrimeHub()
     StatusLight = Hub.status_light
     LightMatrix = Hub.light_matrix
-
     distanceSensor = DistanceSensor('<port>')
-
     lightSensor = LightSensor('<port>')
     l_colorSensor = ColorSensor('<port>')
     r_colorSensor = ColorSensor('<port>')
-
     motor_r = Motor('<port>')
     motor_l = Motor('<port>')
-
-    motors = MotorPair(motor_l, motor_r)
+    motors = MotorPair(motor_l, motor_r) 
+    # Setup a control panel for hosting both motors at one time.
 
 def startup(Hub, StatusLight, motor_r, motor_l, motors):
     StatusLight.on(color="orange")
