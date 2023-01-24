@@ -3,6 +3,7 @@ from spike.control import wait_for_seconds, wait_until, Timer
 from math import *
 
 completed = []
+__name__ = "__main__"
 
 hub = PrimeHub()
 
@@ -78,5 +79,4 @@ def travel(location: str):
 if __name__ == "__main__":
     setup()
     startup()
-
 
