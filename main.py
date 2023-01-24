@@ -2,6 +2,8 @@ from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, Motio
 from spike.control import wait_for_seconds, wait_until, Timer
 from math import *
 
+completed = []
+
 hub = PrimeHub()
 
 def setup():
@@ -39,7 +41,7 @@ def road_lr(l_colorSensor, r_ColorSensor):
 
 # -= Challenges =-
 
-def windmil_thing():
+def windmil_challenge():
     if ForceSensor.result >= 3:
         motors.forward(rotations=0.5)
         motors.backward(rotations=0.5)
@@ -59,6 +61,21 @@ def windmil_thing():
         else:
             print("[LOGS]: Error: Cannot determine direction of road. Retrying...")
         
+def travel(location: str):
+    if location.lower() == "windmill":
+        windmil_challenge()
+        location.lower().append(completed)
+    elif location.lower() == "":
+        pass
+        location.lower().append(completed)
+    elif location.lower() == "":
+        pass
+        location.lower().append(completed)
+    elif location.lower() == "":
+        pass
+        location.lower().append(completed)
+    else:
+        print("Location is invalid.")
         
 
 if __name__ == "__main__":
