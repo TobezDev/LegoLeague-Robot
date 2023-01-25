@@ -76,3 +76,10 @@ def travel(location: str):
         print("Location is invalid.")
         
 
+async def setup(self):
+    self.runModule(setup)
+    self.runModule(startup)
+    
+    self.initiate(road, road_lr, travel)
+    self.initiate(windmil_challenge)
+    self.initiateModule(multiple=[windmil_challenge])
