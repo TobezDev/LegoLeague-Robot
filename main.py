@@ -2,13 +2,9 @@ from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, Motio
 from spike.control import wait_for_seconds, wait_until, Timer
 from math import *
 
-
 completed = []
-__name__ = "__main__"
-
 
 hub = PrimeHub()
-
 
 async def setup():
     Hub = PrimeHub()
@@ -21,53 +17,40 @@ async def setup():
     motor_l = Motor('F')
     motors = MotorPair(motor_l, motor_r) 
     # Setup a control panel for hosting both motors at one time.
+    __name__ = "__main__"
+    # Add a name = main var to check if any edits happen to the hub between setup and startup.
 
-async def startup(Hub, StatusLight, motor_r, motor_l, motors):
+async def startup():
     StatusLight.on(color="orange")
+    hub.setStatus("startup")
+    localeSetup = hub.findDir('/home/runner/primehub/setup/setup.ini')
+    hub.runScript(localeSetup)
+    return "true"
 
-async def road(l_colorSensor, r_ColorSensor):
-    if l_ColorSensor.result == "black" or r_ColorSensor.result == "black":
-        return True
+# Road Tracker Helper
+async def roadCheck():
+    if ColorSensor.result == "black":
+        return "road"
+    elif ColorSensor.result == "white":
+        return "road_offside"
     else:
-        return False
+        return "not_road"
 
-async def road_lr(l_colorSensor, r_ColorSensor):
-    if l_colorSensor.result() == "white":
-        return "Left"
-    elif r_ColorSensor.result() == "white":
-        return "Right"
-    else:
-        return None
+# -= Challenges  =-
 
-        
-async def travel(location: str):
-    if location.lower() == "windmill":
-        windmil_challenge()
-        location.lower().append(completed)
-    elif location.lower() == "":
+async def oilPlatform():
+    try:
         pass
-        location.lower().append(completed)
-    elif location.lower() == "":
-        pass
-        location.lower().append(completed)
-    elif location.lower() == "":
-        pass
-        location.lower().append(completed)
-    else:
-        print("Location is invalid.")
-
-
-# -= Challenges =-
-
+        # put movement script here (preferably hardcoded)
+    except Exception as e:
+        hub.stopAll()
+        print(f"[ERROR]: Hub has encountered an exception: {e}")
 
 
 # -= End Challenges =-
 
-async def setup(self):
-    self.runModule(setup)
-    self.runModule(startup)
-    
-    self.initiate(road, road_lr, travel)
-    self.initiate(windmil_challenge)
-    self.initiateModule([windmil_challenge, road, road_lr, travel].seperate())
+setup()
 
+if __name__ == "__main__" and setup() == "true":
+    startup()
+    
