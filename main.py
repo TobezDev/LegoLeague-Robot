@@ -38,6 +38,7 @@ async def roadCheck():
 
 # -= Challenges  =-
 
+
 async def oilPlatform():
     try:
         pass
@@ -48,6 +49,19 @@ async def oilPlatform():
 
 
 # -= End Challenges =-
+
+##############################
+#  CHALLENGE SCRIPT TEMPLATE #
+##############################
+async def challenge_name(params: None):
+    try:
+        pass
+        # remove 'pass' and put movement script here.
+    except Exception as e:
+        print(f"[ERROR]: Hub has encountered an exception: {e}")
+#################################
+# END CHALLENGE SCRIPT TEMPLATE #
+#################################
 
 setup()
 
