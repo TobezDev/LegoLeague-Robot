@@ -82,4 +82,5 @@ async def setup(self):
     
     self.initiate(road, road_lr, travel)
     self.initiate(windmil_challenge)
-    self.initiateModule(multiple=[windmil_challenge])
+    self.initiateModule([windmil_challenge, road, road_lr, travel].seperate())
+
