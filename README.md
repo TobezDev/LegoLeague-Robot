@@ -8,7 +8,7 @@
 
 ### Contributors:
 
-#### [@TheRealTobes28-Codez](https://linktr.ee/Tobez), [@EvictedDeath](https://github.com)
+#### [@TheRealTobes28-Codez](mailto:admin@tobestech.com), [@EvictedDeath](https://github.com)
 
 ######
 
