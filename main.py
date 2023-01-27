@@ -1,70 +1,23 @@
-from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
-from spike.control import wait_for_seconds, wait_until, Timer
-from math import *
-
-completed = []
+from spike import PrimeHub, MotorPair, Motor, ColorSensor
 
 hub = PrimeHub()
 
-async def setup():
-    Hub = PrimeHub()
-    StatusLight = Hub.status_light
-    LightMatrix = Hub.light_matrix
-    colorSensor = ColorSensor('C')
-    forceSensor = ForceSensor('B')
-    frontMotor = Motor('D')
-    motor_r = Motor('E')
-    motor_l = Motor('F')
-    motors = MotorPair(motor_l, motor_r) 
-    # Setup a control panel for hosting both motors at one time.
-    __name__ = "__main__"
-    # Add a name = main var to check if any edits happen to the hub between setup and startup.
+movement_motors = MotorPair("F", "E")
+movement_motors.set_default_speed(70)
 
-async def startup():
-    StatusLight.on(color="orange")
-    hub.setStatus("startup")
-    localeSetup = hub.findDir('/home/runner/primehub/setup/setup.ini')
-    hub.runScript(localeSetup)
-    return "true"
+picker_motor = Motor("D")
 
-# Road Tracker Helper
-async def roadCheck():
-    if ColorSensor.result == "black":
-        return "road"
-    elif ColorSensor.result == "white":
-        return "road_offside"
-    else:
-        return "not_road"
+colour_sensor = ColorSensor("C")
+colour_sensor.light_up(100, 100, 100)
 
-# -= Challenges  =-
+picker_motor.run_to_position(0)
+movement_motors.move(30)
+movement_motors.start()
 
+colour_sensor.wait_until_color("black")
 
-async def oilPlatform():
-    try:
-        pass
-        # put movement script here (preferably hardcoded)
-    except Exception as e:
-        hub.stopAll()
-        print(f"[ERROR]: Hub has encountered an exception: {e}")
+movement_motors.stop()
+movement_motors.move(10, "cm", -90)
+movement_motors.move(10)
 
-
-# -= End Challenges =-
-
-##############################
-#  CHALLENGE SCRIPT TEMPLATE #
-##############################
-async def challenge_name(params: None):
-    try:
-        pass
-        # remove 'pass' and put movement script here.
-    except Exception as e:
-        print(f"[ERROR]: Hub has encountered an exception: {e}")
-#################################
-# END CHALLENGE SCRIPT TEMPLATE #
-#################################
-
-setup()
-
-if __name__ == "__main__" and setup() == "true":
-    startup()
-    
+picker_motor.run_for_degrees(-200, 30)
