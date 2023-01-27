@@ -2,6 +2,9 @@ from spike import PrimeHub, MotorPair, Motor, ColorSensor
 
 hub = PrimeHub()
 
+def log(text):
+    print(f"[LOGS]: {text}")
+
 movement_motors = MotorPair("F", "E")
 movement_motors.set_default_speed(70)
 
@@ -15,6 +18,7 @@ movement_motors.move(30)
 movement_motors.start()
 
 colour_sensor.wait_until_color("black")
+log("Road Found")
 
 movement_motors.stop()
 movement_motors.move(10, "cm", -90)
