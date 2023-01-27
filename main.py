@@ -2,8 +2,15 @@ from spike import PrimeHub, MotorPair, Motor, ColorSensor
 
 hub = PrimeHub()
 
+
 def log(text):
-    print(f"[LOGS]: {text}")
+    try:
+        print(f"[LOGS]: {text}")
+    except SyntaxError as err:
+        print(f"[SyntaxError]: {err}")
+    except TypeError as err:
+        print(f"[TypeError]: {err}")
+
 
 movement_motors = MotorPair("F", "E")
 movement_motors.set_default_speed(70)
