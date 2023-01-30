@@ -22,11 +22,22 @@ movement_motors.move(10, "cm", -90)
 movement_motors.move(10)
 
 front_motor.run_for_degrees(-200, 30)
-
 # -=-=- #
 movement_motors.move(5, "cm", -90)
 
-movement_motors.move(40)
+movement_motors.move(10)
 
 movement_motors.move(5, "cm", 90)
+
+movement_motors.move(40)
+
+movement_motors.move(5, "cm", -90)
+
+movement_motors.move(10)
+
+movement_motors.move(5, "cm", 90)
+
+movement_motors.move(40)
+
+
 
