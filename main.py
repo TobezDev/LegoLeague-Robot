@@ -3,14 +3,14 @@ from spike import PrimeHub, MotorPair, Motor, ColorSensor
 hub = PrimeHub()
 
 movement_motors = MotorPair("F", "E")
-picker_motor = Motor("D")
+front_motor = Motor("D")
 color_sensor = ColorSensor("C")
 
 movement_motors.set_default_speed(70)
 
 color_sensor.light_up(100, 100, 100)
 
-picker_motor.run_to_position(0)
+front_motor.run_to_position(0)
 movement_motors.move(30)
 
 movement_motors.start()
