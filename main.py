@@ -9,7 +9,7 @@ front_motor = Motor("D")
 color_sensor = ColorSensor("C")
 color_sensor.light_up(100, 100, 100)
 
-# Letting it move out of start area before it begins to look for black
+# Move robot out of 'home' area
 movement_motors.start()
 sleep(1.45)
 
