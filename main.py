@@ -43,7 +43,7 @@ movement_motors.stop()
 
 movement_motors.move(5, "cm", -90)
 
-for i in range(3):
+for i in range(3): # assuming we can just repeat this...
     movement_motors.move(5)
     front_motor.run_for_degrees(200)
     movement_motors.move(-5)
