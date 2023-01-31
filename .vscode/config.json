@@ -1,5 +1,5 @@
 {
     "tabSize": 4,
     "git.ignorePushSizeLimit": true,
-    "git.addPushCommentsAutomatically": false
+    "$schema": "http://json-schema.org/schema"
 }
