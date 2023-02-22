@@ -20,8 +20,8 @@ movement_motors.stop()
 
 # Turning left and dropping off the payload
 movement_motors.move(11, "cm", -90)
-movement_motors.move(42.5)
-back_motor.run_for_degrees(150, 10)
+movement_motors.move(43)
+back_motor.run_for_degrees(150, 5)
 back_motor.run_for_degrees(-150, 30)
 
 # -= BEGIN MISSION 2 =- #
@@ -36,14 +36,14 @@ movement_motors.move(-5)
 
 # -= END OF MISSION 2 =- #
 # -= BEGIN MISSION 3 =- #
-movement_motors.move(5, "cm", 90)
+movement_motors.move(9.9, "cm", 90)
 
 movement_motors.start()
 sleep(2.5)
 color_sensor.wait_until_color("black")
 movement_motors.stop()
-movement_motors.move(10, "cm", -90)
-movement_motors.move(3)
+movement_motors.move(7.5, "cm", -90)
+movement_motors.move(-2.5)
 front_motor.run_for_degrees(250)
 
 for i in range(3):
@@ -51,10 +51,13 @@ for i in range(3):
     movement_motors.move(-7.5)
     
 # -= END MISSION 3 =- #
+# -= BEGIN MISSION 4 -= #
+
+# -= END MISSION 4 =- #
 # -= RETURN HOME =- #
 
 movement_motors.move(-7.5)
-movement_motors.move(15, 'cm', 90)
+movement_motors.move(22.5, 'cm', 90)
 
 movement_motors.start()
 color_sensor.wait_until_color("white")
