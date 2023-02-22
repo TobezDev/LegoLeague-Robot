@@ -4,15 +4,16 @@ from time import sleep
 # Initialising
 hub = PrimeHub()
 movement_motors = MotorPair("F", "E")
-movement_motors.set_default_speed(50)
+color_sensor = ColorSensor("C")
 front_motor = Motor("D")
 back_motor = Motor("B")
-color_sensor = ColorSensor("C")
+
+# Set default speed for all movement motors
+movement_motors.set_default_speed(50)
 
 # Letting it move out of start area before it begins to look for black
 movement_motors.start()
 sleep(2.5)
-
 
 # Stopping when it sees the road
 color_sensor.wait_until_color("black")
@@ -33,11 +34,9 @@ front_motor.run_for_degrees(250, 100)
 movement_motors.move(-10, "cm", 0, 10)
 front_motor.run_for_degrees(-250)
 movement_motors.move(-5)
-
 # -= END OF MISSION 2 =- #
 # -= BEGIN MISSION 3 =- #
 movement_motors.move(9.9, "cm", 90)
-
 movement_motors.start()
 sleep(2.5)
 color_sensor.wait_until_color("black")
@@ -49,16 +48,13 @@ front_motor.run_for_degrees(250)
 for i in range(3):
     movement_motors.move(10)
     movement_motors.move(-7.5)
-    
 # -= END MISSION 3 =- #
 # -= BEGIN MISSION 4 -= #
 
 # -= END MISSION 4 =- #
 # -= RETURN HOME =- #
-
 movement_motors.move(-7.5)
 movement_motors.move(22.5, 'cm', 90)
-
 movement_motors.start()
 color_sensor.wait_until_color("white")
 sleep(2)
